@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energo University</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Модаль стилі */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .modal img {
+            width: 120px; /* Логотип өлшемі */
+            margin-bottom: 30px;
+            background-color: green;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .modal h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .modal input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            font-size: 16px;
+        }
+
+        .modal button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+<header>
+    <div class="logo">
+        <img src="images/logotype_17.png" alt="Energo University Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Университет</a></li>
+            <li><a href="#">Platonus AUES</a></li>
+            <li><a href="#">Оқуға түсушілер</a></li>
+            <li><a href="#">Студенттерге</a></li>
+            <li><a href="#">Жаңалықтар</a></li>
+            <li><a href="#" class="btn" onclick="openModal('loginModal')">Sign in</a></li>
+            <li><a href="#" class="btn" onclick="openModal('registerModal')">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Энергетикада бірінші, технологияда көшбасшы!</h1>
+    <input type="text" placeholder="Сайт бойынша іздеу">
+    <button>ІЗДЕУ</button>
+</section>
+
+<section class="info">
+    <h2>АУЭС - Ғұмарбек Дәукеев атындағы Алматы энергетика және байланыс университеті</h2>
+    <p>Алматы энергетика және байланыс университеті 1975 жылы құрылды.</p>
+    <img src="images/images1.jpeg" alt="AUES Building">
+</section>
+
+<!-- Кіру модалі (Login Modal) -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <img src="images/logotype_17.png" alt="Logo"> <!-- Логотип -->
+        <h2>Sign In</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button>Login</button>
+    </div>
+</div>
+
+<!-- Тіркелу модалі (Register Modal) -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('registerModal')">&times;</span>
+        <img src="images/logotype_17.png" alt="Logo"> <!-- Логотип -->
+        <h2>Register</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button>Register</button>
+    </div>
+</div>
+
+<script>
+    // Модалды ашу функциясы
+    function openModal(id) {
+        document.getElementById(id).style.display = "flex";
+    }
+
+    // Модалды жабу функциясы
+    function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="particles-config.js"></script>
+
+</body>
+</html>
+
